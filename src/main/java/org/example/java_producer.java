@@ -59,13 +59,13 @@ public class java_producer  implements Runnable{
                             if (exception == null) {
                                 System.out.println("==========================================================================================================================================================");
                                 System.out.println("Message sent successfully to partition " + metadata.partition()
-                                        + " at offset " + metadata.offset()+ " with key "+record.key()+ " with value "+record.value);
+                                        + " at offset " + metadata.offset()+ " with key "+record.key()+ " with value "+record.value());
                                 System.out.println("==========================================================================================================================================================");
                             } else {
                                 System.err.println("Failed to send message: " + exception.getMessage());
                             }
                         }
-                    }););
+                    });
 //       EVERY 3 SEC THE Producer WILL SEND Message
                 Thread.sleep(3000);
             } catch (SerializationException e) {
